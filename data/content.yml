@@ -1,8 +1,9 @@
 hero:
   name: Tobiloba Adedeji
   title: Data Analytics & Operations Professional
-  tagline: Where data meets systems and decisions — building frameworks that help institutions and people grow.
-  photo: ''
+  tagline: Where data meets systems and decisions — building frameworks that help
+    institutions and people grow.
+  photo: ""
   available: true
   roles:
     - title: Data Analyst
@@ -11,23 +12,26 @@ hero:
     - title: Dashboard Designer
     - title: Workforce Analytics Expert
   stats:
-    - number: '2+'
+    - number: 2+
       label: Years Experience
-    - number: '3+'
+    - number: 14+
       label: Projects Delivered
-    - number: '5'
+    - number: "5"
       label: Certifications
-
 about:
-  bio_1: I work at the intersection of data, systems, and execution. With a background in program and operations management, I transitioned into data analytics after recognizing that the teams that move fastest and smartest are the ones that see their data clearly and design systems intentionally.
-  bio_2: My approach treats data not as a report card, but as a compass — helping organizations ask better questions, allocate resources wisely, and act with confidence.
+  bio_1: I work at the intersection of data, systems, and execution. With a
+    background in program and operations management, I transitioned into data
+    analytics after recognizing that the teams that move fastest and smartest
+    are the ones that see their data clearly and design systems intentionally.
+  bio_2: My approach treats data not as a report card, but as a compass — helping
+    organizations ask better questions, allocate resources wisely, and act with
+    confidence.
   domains:
     - name: Higher Education
     - name: Tech Startups
     - name: HR Analytics
     - name: Operations
     - name: Business Simulations
-
 skills:
   competencies:
     - name: Data Analysis & Insight Generation
@@ -73,13 +77,15 @@ skills:
     - name: AppScript
     - name: Reporting & Visualization
     - name: Data Modeling
-
 projects:
   - title: People Pulse (HR) Dashboard
-    description: An interactive HR analytics solution designed to transform raw employee data into clear, decision-ready insights. Built as a reusable Excel template enabling HR professionals to quickly analyze workforce composition, compensation patterns, and key people metrics.
+    description: An interactive HR analytics solution designed to transform raw
+      employee data into clear, decision-ready insights. Built as a reusable
+      Excel template enabling HR professionals to quickly analyze workforce
+      composition, compensation patterns, and key people metrics.
     featured: true
-    link: ''
-    image: ''
+    link: ""
+    image: ""
     tools:
       - name: Excel
       - name: Data Modeling
@@ -90,10 +96,12 @@ projects:
       - text: Headcount, age bands, income & attrition tracking
       - text: Downloadable, reusable Excel template
   - title: Sales Performance Analysis — Aurum Retail Ltd.
-    description: An interactive sales dashboard built for evidence-based business strategy, surfacing total sales, profit trends, customer insights, and top-performing products in a clean, decision-ready format.
+    description: An interactive sales dashboard built for evidence-based business
+      strategy, surfacing total sales, profit trends, customer insights, and
+      top-performing products in a clean, decision-ready format.
     featured: false
-    link: ''
-    image: ''
+    link: ""
+    image: ""
     tools:
       - name: Excel
       - name: Power BI
@@ -102,17 +110,18 @@ projects:
       - text: Customer segmentation & insight breakdowns
       - text: Top-performing product identification
   - title: Superstore Sales Dashboard
-    description: A case scenario project exploring three essential Excel formulas that demonstrate how data professionals deliver critical analysis under pressure — built around a retail superstore dataset.
+    description: A case scenario project exploring three essential Excel formulas
+      that demonstrate how data professionals deliver critical analysis under
+      pressure — built around a retail superstore dataset.
     featured: false
-    link: ''
-    image: ''
+    link: ""
+    image: ""
     tools:
       - name: Excel
     features:
       - text: Three job-saving Excel formula techniques
       - text: Retail sales scenario analysis
       - text: Practical business application showcase
-
 experience:
   - role: Process Manager
     company: Docenti Global Business School
@@ -135,14 +144,13 @@ experience:
       - name: Excel
       - name: Google Analytics
       - name: Python
-
 education:
   - degree: B.Sc. Political Science & Government
     school: Federal University Oye-Ekiti
     period: 2018 – 2023
     location: Oye-Ekiti, Nigeria
-    note: Foundation in systems analysis, policy, and human behavior — disciplines that now inform my approach to data and operations.
-
+    note: Foundation in systems analysis, policy, and human behavior — disciplines
+      that now inform my approach to data and operations.
 certifications:
   - name: Google Data Analytics
     issuer: Google / Coursera
@@ -159,10 +167,9 @@ certifications:
   - name: AI Workplace Proficiency Certification
     issuer: Professional Development
     type: ai
-
 contact:
   email: tobbyflashy@gmail.com
-  whatsapp: '+234 803 322 9208'
+  whatsapp: +234 803 322 9208
   location: Lagos, Nigeria
   linkedin: https://linkedin.com/in/tobilobadedeji
   twitter: https://x.com/tobilobadedeji
