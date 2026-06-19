@@ -1,7 +1,7 @@
 hero:
   name: Tobiloba Adedeji
   title: Data Analytics & Operations Professional
-  tagline: Where data meets systems and decisions — building frameworks that help
+  tagline: Where data meets systems and decisions ...building frameworks that help
     institutions and people grow.
   photo: /images/uploads/pasport.png
   available: true
@@ -45,32 +45,32 @@ skills:
   tools:
     - name: Microsoft Excel
       badge: XL
-      logo: ''
+      logo: /images/uploads/excel-logo.jpg
       level: Advanced
       color: xl
     - name: Power BI
       badge: PBI
-      logo: ''
+      logo: /images/uploads/power-bi-logo.jpg
       level: Proficient
       color: pbi
     - name: SQL
       badge: SQL
-      logo: ''
+      logo: /images/uploads/sql-logo.png
       level: Proficient
       color: sql
     - name: Python
       badge: Py
-      logo: ''
+      logo: /images/uploads/python-logo.jpg
       level: Working
       color: py
     - name: Google Analytics
       badge: GA
-      logo: ''
+      logo: /images/uploads/google-analytics.png
       level: Proficient
       color: ga
     - name: AI-Assisted Analysis
       badge: AI
-      logo: ''
+      logo: /images/uploads/ai-logo.jpg
       level: Proficient
       color: ai
   professional:
