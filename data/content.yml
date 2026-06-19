@@ -1,0 +1,169 @@
+hero:
+  name: Tobiloba Adedeji
+  title: Data Analytics & Operations Professional
+  tagline: Where data meets systems and decisions — building frameworks that help institutions and people grow.
+  photo: ''
+  available: true
+  roles:
+    - title: Data Analyst
+    - title: Systems Analyst
+    - title: Operations Professional
+    - title: Dashboard Designer
+    - title: Workforce Analytics Expert
+  stats:
+    - number: '2+'
+      label: Years Experience
+    - number: '3+'
+      label: Projects Delivered
+    - number: '5'
+      label: Certifications
+
+about:
+  bio_1: I work at the intersection of data, systems, and execution. With a background in program and operations management, I transitioned into data analytics after recognizing that the teams that move fastest and smartest are the ones that see their data clearly and design systems intentionally.
+  bio_2: My approach treats data not as a report card, but as a compass — helping organizations ask better questions, allocate resources wisely, and act with confidence.
+  domains:
+    - name: Higher Education
+    - name: Tech Startups
+    - name: HR Analytics
+    - name: Operations
+    - name: Business Simulations
+
+skills:
+  competencies:
+    - name: Data Analysis & Insight Generation
+      level: 95
+    - name: Dashboard Design & Data Storytelling
+      level: 90
+    - name: Business & Workforce Analytics
+      level: 88
+    - name: Process Optimization & Systems Thinking
+      level: 85
+  tools:
+    - name: Microsoft Excel
+      badge: XL
+      level: Advanced
+      color: xl
+    - name: Power BI
+      badge: PBI
+      level: Proficient
+      color: pbi
+    - name: SQL
+      badge: SQL
+      level: Proficient
+      color: sql
+    - name: Python
+      badge: Py
+      level: Working
+      color: py
+    - name: Google Analytics
+      badge: GA
+      level: Proficient
+      color: ga
+    - name: AI-Assisted Analysis
+      badge: AI
+      level: Proficient
+      color: ai
+  professional:
+    - name: Structured Thinking
+    - name: Stakeholder Engagement
+    - name: Time Management
+    - name: Power Query
+    - name: PivotTables
+    - name: Data Cleaning & Transformation
+    - name: AppScript
+    - name: Reporting & Visualization
+    - name: Data Modeling
+
+projects:
+  - title: People Pulse (HR) Dashboard
+    description: An interactive HR analytics solution designed to transform raw employee data into clear, decision-ready insights. Built as a reusable Excel template enabling HR professionals to quickly analyze workforce composition, compensation patterns, and key people metrics.
+    featured: true
+    link: ''
+    image: ''
+    tools:
+      - name: Excel
+      - name: Data Modeling
+      - name: Visualization
+    features:
+      - text: Dynamic filtering by department and role
+      - text: Real-time metric updates with connected slicers
+      - text: Headcount, age bands, income & attrition tracking
+      - text: Downloadable, reusable Excel template
+  - title: Sales Performance Analysis — Aurum Retail Ltd.
+    description: An interactive sales dashboard built for evidence-based business strategy, surfacing total sales, profit trends, customer insights, and top-performing products in a clean, decision-ready format.
+    featured: false
+    link: ''
+    image: ''
+    tools:
+      - name: Excel
+      - name: Power BI
+    features:
+      - text: Total sales & profit trend analysis
+      - text: Customer segmentation & insight breakdowns
+      - text: Top-performing product identification
+  - title: Superstore Sales Dashboard
+    description: A case scenario project exploring three essential Excel formulas that demonstrate how data professionals deliver critical analysis under pressure — built around a retail superstore dataset.
+    featured: false
+    link: ''
+    image: ''
+    tools:
+      - name: Excel
+    features:
+      - text: Three job-saving Excel formula techniques
+      - text: Retail sales scenario analysis
+      - text: Practical business application showcase
+
+experience:
+  - role: Process Manager
+    company: Docenti Global Business School
+    period: Jan 2026 – Present
+    location: Ikeja, Lagos
+    current: true
+    tools:
+      - name: Excel
+      - name: Python
+      - name: SQL
+      - name: Power BI
+      - name: AppScript
+      - name: Forms
+  - role: Program Coordinator
+    company: Rome Business School Nigeria
+    period: Jan 2024 – Oct 2025
+    location: Lagos, Nigeria
+    current: false
+    tools:
+      - name: Excel
+      - name: Google Analytics
+      - name: Python
+
+education:
+  - degree: B.Sc. Political Science & Government
+    school: Federal University Oye-Ekiti
+    period: 2018 – 2023
+    location: Oye-Ekiti, Nigeria
+    note: Foundation in systems analysis, policy, and human behavior — disciplines that now inform my approach to data and operations.
+
+certifications:
+  - name: Google Data Analytics
+    issuer: Google / Coursera
+    type: g
+  - name: Excel Skills for Business Specialization
+    issuer: Macquarie University / Coursera
+    type: xl
+  - name: Excel Skills for Data Analytics & Visualization
+    issuer: Macquarie University / Coursera
+    type: xl
+  - name: McKinsey Forward Program
+    issuer: McKinsey.org
+    type: mk
+  - name: AI Workplace Proficiency Certification
+    issuer: Professional Development
+    type: ai
+
+contact:
+  email: tobbyflashy@gmail.com
+  whatsapp: '+234 803 322 9208'
+  location: Lagos, Nigeria
+  linkedin: https://linkedin.com/in/tobilobadedeji
+  twitter: https://x.com/tobilobadedeji
+  facebook: https://facebook.com/tobiloba.adedeji.7311

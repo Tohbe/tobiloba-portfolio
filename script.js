@@ -5,14 +5,15 @@
 
 async function loadContent() {
   try {
-    const res = await fetch('/data/content.json');
+    const res = await fetch('/data/content.yml');
     if (!res.ok) throw new Error(res.status);
-    const d = await res.json();
+    const text = await res.text();
+    const d = jsyaml.load(text);
     renderAll(d);
   } catch (e) {
-    console.error('Could not load content.json:', e);
+    console.error('Could not load content.yml:', e);
     document.getElementById('hero-render').innerHTML =
-      '<p style="color:#64748b;padding:2rem">Unable to load content. Please check data/content.json.</p>';
+      '<p style="color:#64748b;padding:2rem">Unable to load content. Please check data/content.yml.</p>';
   }
 }
 

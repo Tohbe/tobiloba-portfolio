@@ -11,8 +11,8 @@ collections:
     files:
       - label: "Site Content"
         name: "content"
-        file: "data/content.json"
-        format: json
+        file: "data/content.yml"
+        format: yaml
         fields:
 
           # ── HERO ──────────────────────────────────────────────
