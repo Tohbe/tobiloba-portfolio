@@ -49,7 +49,7 @@
 /* ─── SMOOTH THEME TRANSITION ─── */
 body, .navbar, .proj-card, .cert-card, .tech-card, .phil-card,
 .cinfo-icon, .soc-link, .finput, .footer, .section-alt, .tl-dot,
-.avatar-core, .location-badge, .stag, .dtag, .ttag, .bar-track {
+.profile-card, .stag, .dtag, .ttag, .bar-track {
   transition: background-color var(--trans), border-color var(--trans),
               color var(--trans), box-shadow var(--trans);
 }
@@ -337,31 +337,91 @@ ul { list-style: none; }
 
 /* ─── ABOUT ─── */
 .about-grid { display: grid; grid-template-columns: 240px 1fr; gap: 64px; align-items: start; }
-.about-left { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.about-left { display: flex; flex-direction: column; align-items: stretch; }
 
-.avatar-wrap { position: relative; width: 160px; height: 160px; }
-.avatar-core {
-  position: absolute; inset: 20px; border-radius: 50%;
+/* ─── PROFILE CARD ─── */
+.profile-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 28px 20px 24px;
+  text-align: center; position: relative; overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  transition: border-color var(--trans), box-shadow var(--trans);
+}
+.profile-card:hover { border-color: rgba(0,212,255,0.2); box-shadow: 0 8px 40px var(--shadow); }
+
+.profile-card-stripe {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+/* Avatar container */
+.profile-avatar {
+  width: 90px; height: 90px; border-radius: 50%;
+  margin: 0 auto 16px; position: relative;
+}
+
+/* Photo variant */
+.profile-avatar.has-photo {
+  border: 3px solid transparent;
+  background: linear-gradient(var(--card), var(--card)) padding-box,
+              linear-gradient(135deg, var(--accent), var(--accent2)) border-box;
+  overflow: hidden;
+}
+.prof-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Initials variant with spinning dashed ring */
+.profile-avatar.is-initials { overflow: visible; }
+.prof-initials {
+  width: 90px; height: 90px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.prof-ring-svg {
+  position: absolute; inset: -5px; width: calc(100% + 10px); height: calc(100% + 10px);
+}
+.ring-spin { animation: ringRotate 10s linear infinite; transform-origin: center; }
+@keyframes ringRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.prof-initials span {
+  position: relative; z-index: 2;
+  width: 76px; height: 76px; border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--heading); font-size: 2.4rem; font-weight: 800; color: #fff; z-index: 2;
-}
-.avatar-ring {
-  position: absolute; inset: 0; border-radius: 50%;
-  border: 1px solid rgba(0,212,255,0.2);
-  animation: ringPulse 3s ease-in-out infinite;
-}
-.avatar-ring.r2 { inset: -12px; border-color: rgba(99,102,241,0.15); animation-delay: 1s; }
-@keyframes ringPulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.4; transform: scale(1.05); }
+  font-family: var(--heading); font-size: 1.8rem; font-weight: 800; color: #fff;
+  box-shadow: 0 4px 20px rgba(0,212,255,0.3);
 }
 
-.location-badge {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 0.85rem; color: var(--light);
-  background: var(--surface); border: 1px solid var(--border);
-  padding: 6px 14px; border-radius: 50px;
+/* Online/availability dot */
+.profile-status-dot {
+  position: absolute; bottom: 2px; right: 2px;
+  width: 14px; height: 14px; background: #22c55e;
+  border-radius: 50%; border: 2px solid var(--card);
+  animation: pulse 2s infinite;
+}
+
+.profile-name {
+  font-family: var(--heading); font-size: 1.05rem; font-weight: 700;
+  color: var(--text); margin-bottom: 4px; line-height: 1.2;
+}
+.profile-job { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+.profile-divider {
+  height: 1px; background: var(--border); margin: 16px 0;
+}
+
+.profile-loc {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 0.85rem; color: var(--light); margin-bottom: 10px;
+}
+.profile-flag { font-size: 1rem; line-height: 1; }
+
+.profile-avail {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.78rem; color: var(--accent); font-weight: 500;
+  background: rgba(0,212,255,0.07); border: 1px solid rgba(0,212,255,0.15);
+  padding: 5px 12px; border-radius: 50px; margin-bottom: 16px;
+}
+
+.profile-socials {
+  display: flex; justify-content: center; gap: 8px;
 }
 
 .about-p { color: var(--light); line-height: 1.8; margin-bottom: 20px; font-size: 1rem; }
@@ -578,6 +638,10 @@ ul { list-style: none; }
   border-radius: 4px;
 }
 
+/* Tool logo variant */
+.tech-badge.has-logo { background: #ffffff !important; padding: 6px; border: 1px solid rgba(0,0,0,0.08); }
+.tool-logo-img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 4px; }
+
 .cert-info { flex: 1; }
 .cert-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); }
 .cert-info p  { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
@@ -688,7 +752,7 @@ body.nav-open .nav-links {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .about-grid      { grid-template-columns: 1fr; }
-  .about-left      { flex-direction: row; justify-content: flex-start; }
+  .about-left      { max-width: 320px; margin: 0 auto; }
   .skills-layout   { grid-template-columns: 1fr; }
   .projects-grid   { grid-template-columns: 1fr; }
   .proj-card.featured { grid-column: auto; }

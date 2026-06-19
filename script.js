@@ -32,7 +32,7 @@ async function loadContent() {
 
 function renderAll(d) {
   renderHero(d.hero);
-  renderAbout(d.about);
+  renderAbout(d.about, d.hero, d.contact);
   renderSkills(d.skills);
   renderProjects(d.projects);
   renderExperience(d.experience, d.education);
@@ -98,23 +98,55 @@ function renderHero(h) {
   `;
 }
 
-function renderAbout(a) {
+function renderAbout(a, hero, contact) {
   const domains = (a.domains || []).map(d => {
     const name = typeof d === 'string' ? d : d.name;
     return `<span class="dtag">${name}</span>`;
   }).join('');
 
+  const socials = [
+    contact?.linkedin ? `<a href="${contact.linkedin}" target="_blank" rel="noopener" class="soc-link" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>` : '',
+    contact?.twitter  ? `<a href="${contact.twitter}"  target="_blank" rel="noopener" class="soc-link" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>` : '',
+    contact?.facebook ? `<a href="${contact.facebook}" target="_blank" rel="noopener" class="soc-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>` : '',
+  ].filter(Boolean).join('');
+
+  const avatarInner = hero?.photo
+    ? `<img src="${hero.photo}" alt="${hero?.name || ''}" class="prof-photo" />`
+    : `<div class="prof-initials">
+        <svg class="prof-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#6366f1"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" stroke-dasharray="6 3" class="ring-spin"/>
+          <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+        </svg>
+        <span>TA</span>
+      </div>`;
+
   document.getElementById('about-render').innerHTML = `
     <div class="about-grid">
       <div class="about-left">
-        <div class="avatar-wrap">
-          <div class="avatar-ring r1"></div>
-          <div class="avatar-ring r2"></div>
-          <div class="avatar-core">TA</div>
-        </div>
-        <div class="location-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Lagos, Nigeria
+        <div class="profile-card">
+          <div class="profile-card-stripe"></div>
+          <div class="profile-avatar ${hero?.photo ? 'has-photo' : 'is-initials'}">
+            ${avatarInner}
+            <span class="profile-status-dot" title="${hero?.available !== false ? 'Available' : 'Busy'}"></span>
+          </div>
+          <h3 class="profile-name">${hero?.name || 'Tobiloba Adedeji'}</h3>
+          <p class="profile-job">${hero?.title || 'Data Analytics Professional'}</p>
+          <div class="profile-divider"></div>
+          <div class="profile-loc">
+            <span class="profile-flag">🇳🇬</span>
+            <span>${contact?.location || 'Lagos, Nigeria'}</span>
+          </div>
+          <div class="profile-avail">
+            <span class="pulse-dot"></span>
+            <span>${hero?.available !== false ? 'Open to opportunities' : 'Open to select projects'}</span>
+          </div>
+          ${socials ? `<div class="profile-socials">${socials}</div>` : ''}
         </div>
       </div>
       <div class="about-right">
@@ -134,6 +166,15 @@ function renderAbout(a) {
   `;
 }
 
+function getToolLogo(name) {
+  const n = name.toLowerCase();
+  if (n.includes('excel') || n.includes('power bi') || n.includes('powerbi')) return 'https://logo.clearbit.com/microsoft.com';
+  if (n.includes('python'))           return 'https://logo.clearbit.com/python.org';
+  if (n.includes('google analytics')) return 'https://logo.clearbit.com/google.com';
+  if (n.includes('appscript'))        return 'https://logo.clearbit.com/google.com';
+  return null;
+}
+
 function renderSkills(s) {
   const bars = s.competencies.map(c => `
     <div class="bar-item reveal">
@@ -142,13 +183,21 @@ function renderSkills(s) {
     </div>
   `).join('');
 
-  const tools = s.tools.map(t => `
-    <div class="tech-card reveal">
-      <div class="tech-badge ${t.color}">${t.badge}</div>
-      <span class="tech-name">${t.name}</span>
-      <span class="tech-lvl">${t.level}</span>
-    </div>
-  `).join('');
+  const tools = s.tools.map(t => {
+    const logo = t.logo || getToolLogo(t.name);
+    return `
+      <div class="tech-card reveal">
+        <div class="tech-badge ${logo ? 'has-logo' : t.color}">
+          ${logo
+            ? `<img src="${logo}" alt="${t.name}" class="tool-logo-img" data-fallback="${t.badge}" data-color="${t.color}" />`
+            : t.badge
+          }
+        </div>
+        <span class="tech-name">${t.name}</span>
+        <span class="tech-lvl">${t.level}</span>
+      </div>
+    `;
+  }).join('');
 
   const prof = s.professional.map(p => {
     const name = typeof p === 'string' ? p : p.name;
@@ -171,6 +220,15 @@ function renderSkills(s) {
       <div class="soft-tags">${prof}</div>
     </div>
   `;
+
+  document.querySelectorAll('.tool-logo-img').forEach(img => {
+    img.addEventListener('error', () => {
+      const wrap = img.parentElement;
+      wrap.classList.remove('has-logo');
+      wrap.classList.add(img.dataset.color);
+      wrap.textContent = img.dataset.fallback;
+    });
+  });
 }
 
 function renderProjects(projects) {

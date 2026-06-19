@@ -45,26 +45,32 @@ skills:
   tools:
     - name: Microsoft Excel
       badge: XL
+      logo: ''
       level: Advanced
       color: xl
     - name: Power BI
       badge: PBI
+      logo: ''
       level: Proficient
       color: pbi
     - name: SQL
       badge: SQL
+      logo: ''
       level: Proficient
       color: sql
     - name: Python
       badge: Py
+      logo: ''
       level: Working
       color: py
     - name: Google Analytics
       badge: GA
+      logo: ''
       level: Proficient
       color: ga
     - name: AI-Assisted Analysis
       badge: AI
+      logo: ''
       level: Proficient
       color: ai
   professional:

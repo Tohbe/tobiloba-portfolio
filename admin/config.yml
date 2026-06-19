@@ -69,11 +69,12 @@ collections:
                 fields:
                   - { label: "Tool Name",    name: "name",  widget: "string" }
                   - { label: "Badge Text",   name: "badge", widget: "string" }
+                  - { label: "Tool Logo (upload image)", name: "logo", widget: "image", required: false }
                   - label: "Proficiency"
                     name: "level"
                     widget: "select"
                     options: ["Advanced", "Proficient", "Working", "Familiar"]
-                  - label: "Color Theme"
+                  - label: "Fallback Color (if no logo)"
                     name: "color"
                     widget: "select"
                     options:
