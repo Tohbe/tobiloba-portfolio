@@ -280,7 +280,7 @@ function renderCertifications(certs) {
   document.getElementById('certs-render').innerHTML = `
     <div class="cert-grid">
       ${certs.map(c => {
-        const logo = getCertLogo(c.name, c.issuer);
+        const logo = c.logo || getCertLogo(c.name, c.issuer);
         return `
           <div class="cert-card reveal">
             <div class="cert-ico ${logo ? 'has-logo' : c.type}">

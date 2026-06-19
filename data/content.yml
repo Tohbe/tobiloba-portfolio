@@ -154,18 +154,23 @@ education:
 certifications:
   - name: Google Data Analytics
     issuer: Google / Coursera
+    logo: ''
     type: g
   - name: Excel Skills for Business Specialization
     issuer: Macquarie University / Coursera
+    logo: ''
     type: xl
   - name: Excel Skills for Data Analytics & Visualization
     issuer: Macquarie University / Coursera
+    logo: ''
     type: xl
   - name: McKinsey Forward Program
     issuer: McKinsey.org
+    logo: ''
     type: mk
   - name: AI Workplace Proficiency Certification
     issuer: Superhuman AI
+    logo: ''
     type: ai
 contact:
   email: tobilobadedeji@gmail.com

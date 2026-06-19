@@ -148,7 +148,8 @@ collections:
             fields:
               - { label: "Certification Name", name: "name",   widget: "string" }
               - { label: "Issuing Body",        name: "issuer", widget: "string" }
-              - label: "Icon Color"
+              - { label: "Issuer Logo (upload image)", name: "logo", widget: "image", required: false }
+              - label: "Fallback Icon Color (if no logo uploaded)"
                 name: "type"
                 widget: "select"
                 options:
