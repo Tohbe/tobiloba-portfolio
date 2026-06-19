@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "name": "Tobiloba Adedeji",
+    "title": "Data Analytics & Operations Professional",
+    "tagline": "Where data meets systems and decisions — building frameworks that help institutions and people grow.",
+    "photo": "",
+    "available": true,
+    "roles": [
+      "Data Analyst",
+      "Systems Analyst",
+      "Operations Professional",
+      "Dashboard Designer",
+      "Workforce Analytics Expert"
+    ],
+    "stats": [
+      { "number": "2+", "label": "Years Experience" },
+      { "number": "3+", "label": "Projects Delivered" },
+      { "number": "5",  "label": "Certifications" }
+    ]
+  },
+  "about": {
+    "bio_1": "I work at the intersection of data, systems, and execution. With a background in program and operations management, I transitioned into data analytics after recognizing that the teams that move fastest and smartest are the ones that see their data clearly and design systems intentionally.",
+    "bio_2": "My approach treats data not as a report card, but as a compass — helping organizations ask better questions, allocate resources wisely, and act with confidence.",
+    "domains": ["Higher Education", "Tech Startups", "HR Analytics", "Operations", "Business Simulations"]
+  },
+  "skills": {
+    "competencies": [
+      { "name": "Data Analysis & Insight Generation",       "level": 95 },
+      { "name": "Dashboard Design & Data Storytelling",     "level": 90 },
+      { "name": "Business & Workforce Analytics",           "level": 88 },
+      { "name": "Process Optimization & Systems Thinking",  "level": 85 }
+    ],
+    "tools": [
+      { "name": "Microsoft Excel",      "badge": "XL",  "level": "Advanced",   "color": "xl"  },
+      { "name": "Power BI",             "badge": "PBI", "level": "Proficient", "color": "pbi" },
+      { "name": "SQL",                  "badge": "SQL", "level": "Proficient", "color": "sql" },
+      { "name": "Python",               "badge": "Py",  "level": "Working",    "color": "py"  },
+      { "name": "Google Analytics",     "badge": "GA",  "level": "Proficient", "color": "ga"  },
+      { "name": "AI-Assisted Analysis", "badge": "AI",  "level": "Proficient", "color": "ai"  }
+    ],
+    "professional": [
+      "Structured Thinking", "Stakeholder Engagement", "Time Management",
+      "Power Query", "PivotTables", "Data Cleaning & Transformation",
+      "AppScript", "Reporting & Visualization", "Data Modeling"
+    ]
+  },
+  "projects": [
+    {
+      "title": "People Pulse (HR) Dashboard",
+      "description": "An interactive HR analytics solution designed to transform raw employee data into clear, decision-ready insights. Built as a reusable Excel template enabling HR professionals to quickly analyze workforce composition, compensation patterns, and key people metrics.",
+      "tools": ["Excel", "Data Modeling", "Visualization"],
+      "features": [
+        "Dynamic filtering by department and role",
+        "Real-time metric updates with connected slicers",
+        "Headcount, age bands, income & attrition tracking",
+        "Downloadable, reusable Excel template"
+      ],
+      "featured": true,
+      "link": "",
+      "image": ""
+    },
+    {
+      "title": "Sales Performance Analysis — Aurum Retail Ltd.",
+      "description": "An interactive sales dashboard built for evidence-based business strategy, surfacing total sales, profit trends, customer insights, and top-performing products in a clean, decision-ready format.",
+      "tools": ["Excel", "Power BI"],
+      "features": [
+        "Total sales & profit trend analysis",
+        "Customer segmentation & insight breakdowns",
+        "Top-performing product identification"
+      ],
+      "featured": false,
+      "link": "",
+      "image": ""
+    },
+    {
+      "title": "Superstore Sales Dashboard",
+      "description": "A case scenario project exploring three essential Excel formulas that demonstrate how data professionals deliver critical analysis under pressure — built around a retail superstore dataset.",
+      "tools": ["Excel"],
+      "features": [
+        "Three job-saving Excel formula techniques",
+        "Retail sales scenario analysis",
+        "Practical business application showcase"
+      ],
+      "featured": false,
+      "link": "",
+      "image": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Process Manager",
+      "company": "Docenti Global Business School",
+      "period": "Jan 2026 – Present",
+      "location": "Ikeja, Lagos",
+      "tools": ["Excel", "Python", "SQL", "Power BI", "AppScript", "Forms"],
+      "current": true
+    },
+    {
+      "role": "Program Coordinator",
+      "company": "Rome Business School Nigeria",
+      "period": "Jan 2024 – Oct 2025",
+      "location": "Lagos, Nigeria",
+      "tools": ["Excel", "Google Analytics", "Python"],
+      "current": false
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. Political Science & Government",
+      "school": "Federal University Oye-Ekiti",
+      "period": "2018 – 2023",
+      "location": "Oye-Ekiti, Nigeria",
+      "note": "Foundation in systems analysis, policy, and human behavior — disciplines that now inform my approach to data and operations."
+    }
+  ],
+  "certifications": [
+    { "name": "Google Data Analytics",                         "issuer": "Google / Coursera",                   "type": "g"  },
+    { "name": "Excel Skills for Business Specialization",      "issuer": "Macquarie University / Coursera",     "type": "xl" },
+    { "name": "Excel Skills for Data Analytics & Visualization","issuer": "Macquarie University / Coursera",    "type": "xl" },
+    { "name": "McKinsey Forward Program",                      "issuer": "McKinsey.org",                        "type": "mk" },
+    { "name": "AI Workplace Proficiency Certification",        "issuer": "Professional Development",            "type": "ai" }
+  ],
+  "contact": {
+    "email": "tobbyflashy@gmail.com",
+    "whatsapp": "+234 803 322 9208",
+    "location": "Lagos, Nigeria",
+    "linkedin": "https://linkedin.com/in/tobilobadedeji",
+    "twitter": "https://x.com/tobilobadedeji",
+    "facebook": "https://facebook.com/tobiloba.adedeji.7311"
+  }
+}

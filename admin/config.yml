@@ -1,0 +1,171 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - label: "Site Content"
+        name: "content"
+        file: "data/content.json"
+        format: json
+        fields:
+
+          # ── HERO ──────────────────────────────────────────────
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Full Name",          name: "name",      widget: "string" }
+              - { label: "Professional Title", name: "title",     widget: "string" }
+              - { label: "Tagline",            name: "tagline",   widget: "text"   }
+              - { label: "Profile Photo",      name: "photo",     widget: "image",  required: false }
+              - { label: "Available for Work", name: "available", widget: "boolean", default: true  }
+              - label: "Typewriter Roles"
+                name: "roles"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Role Title", name: "title", widget: "string" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number (e.g. 2+)", name: "number", widget: "string" }
+                  - { label: "Label",             name: "label",  widget: "string" }
+
+          # ── ABOUT ─────────────────────────────────────────────
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Bio Paragraph 1", name: "bio_1", widget: "text" }
+              - { label: "Bio Paragraph 2", name: "bio_2", widget: "text" }
+              - label: "Client Domains / Tags"
+                name: "domains"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Domain", name: "name", widget: "string" }
+
+          # ── SKILLS ────────────────────────────────────────────
+          - label: "Skills"
+            name: "skills"
+            widget: "object"
+            fields:
+              - label: "Core Competencies"
+                name: "competencies"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name",      name: "name",  widget: "string" }
+                  - { label: "Level (0 – 100)", name: "level", widget: "number", value_type: "int", min: 0, max: 100 }
+              - label: "Technical Tools"
+                name: "tools"
+                widget: "list"
+                fields:
+                  - { label: "Tool Name",    name: "name",  widget: "string" }
+                  - { label: "Badge Text",   name: "badge", widget: "string" }
+                  - label: "Proficiency"
+                    name: "level"
+                    widget: "select"
+                    options: ["Advanced", "Proficient", "Working", "Familiar"]
+                  - label: "Color Theme"
+                    name: "color"
+                    widget: "select"
+                    options:
+                      - { label: "Green (Excel)",         value: "xl"  }
+                      - { label: "Yellow (Power BI)",     value: "pbi" }
+                      - { label: "Blue (SQL)",            value: "sql" }
+                      - { label: "Purple (Python)",       value: "py"  }
+                      - { label: "Orange (Google)",       value: "ga"  }
+                      - { label: "Cyan (AI / Other)",     value: "ai"  }
+              - label: "Professional Skills (Tags)"
+                name: "professional"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Skill", name: "name", widget: "string" }
+
+          # ── PROJECTS ──────────────────────────────────────────
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project Title",    name: "title",       widget: "string"  }
+              - { label: "Description",      name: "description", widget: "text"    }
+              - { label: "Featured Project", name: "featured",    widget: "boolean", default: false }
+              - { label: "Project URL / Link", name: "link",      widget: "string",  required: false }
+              - { label: "Project Image",    name: "image",       widget: "image",   required: false }
+              - label: "Tools Used"
+                name: "tools"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Tool", name: "name", widget: "string" }
+              - label: "Key Features / Highlights"
+                name: "features"
+                widget: "list"
+                summary: "{{fields.text}}"
+                fields:
+                  - { label: "Feature", name: "text", widget: "string" }
+
+          # ── EXPERIENCE ────────────────────────────────────────
+          - label: "Work Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - { label: "Job Title / Role", name: "role",     widget: "string"  }
+              - { label: "Company",          name: "company",  widget: "string"  }
+              - { label: "Period",           name: "period",   widget: "string"  }
+              - { label: "Location",         name: "location", widget: "string"  }
+              - { label: "Current Role",     name: "current",  widget: "boolean", default: false }
+              - label: "Tools & Technologies"
+                name: "tools"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Tool", name: "name", widget: "string" }
+
+          # ── EDUCATION ─────────────────────────────────────────
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Degree / Qualification", name: "degree",   widget: "string" }
+              - { label: "School / University",    name: "school",   widget: "string" }
+              - { label: "Period",                 name: "period",   widget: "string" }
+              - { label: "Location",               name: "location", widget: "string" }
+              - { label: "Note (optional)",        name: "note",     widget: "text",   required: false }
+
+          # ── CERTIFICATIONS ────────────────────────────────────
+          - label: "Certifications"
+            name: "certifications"
+            widget: "list"
+            fields:
+              - { label: "Certification Name", name: "name",   widget: "string" }
+              - { label: "Issuing Body",        name: "issuer", widget: "string" }
+              - label: "Icon Color"
+                name: "type"
+                widget: "select"
+                options:
+                  - { label: "Blue (Google)",    value: "g"  }
+                  - { label: "Green (Excel)",    value: "xl" }
+                  - { label: "Yellow (McKinsey)",value: "mk" }
+                  - { label: "Cyan (AI / Other)",value: "ai" }
+                  - { label: "Yellow (Power BI)",value: "pbi"}
+
+          # ── CONTACT ───────────────────────────────────────────
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email Address",  name: "email",    widget: "string" }
+              - { label: "WhatsApp",       name: "whatsapp", widget: "string" }
+              - { label: "Location",       name: "location", widget: "string" }
+              - { label: "LinkedIn URL",   name: "linkedin", widget: "string" }
+              - { label: "Twitter/X URL", name: "twitter",  widget: "string" }
+              - { label: "Facebook URL",  name: "facebook", widget: "string" }
