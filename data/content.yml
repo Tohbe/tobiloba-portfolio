@@ -23,7 +23,7 @@ about:
     background in program and operations management, I transitioned into data
     analytics after recognizing that the teams that move fastest and smartest
     are the ones that see their data clearly and design systems intentionally.
-  bio_2: My approach treats data not as a report card, but as a compass — helping
+  bio_2: My approach treats data not as a report card, but as a compass; helping
     organizations ask better questions, allocate resources wisely, and act with
     confidence.
   domains:
@@ -85,7 +85,7 @@ projects:
       composition, compensation patterns, and key people metrics.
     featured: true
     link: ""
-    image: ""
+    image: /images/uploads/screenshot-14-.png
     tools:
       - name: Excel
       - name: Data Modeling
@@ -101,7 +101,7 @@ projects:
       top-performing products in a clean, decision-ready format.
     featured: false
     link: ""
-    image: ""
+    image: /images/uploads/aurum.png
     tools:
       - name: Excel
       - name: Power BI
