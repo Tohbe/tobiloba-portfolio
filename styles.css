@@ -566,6 +566,18 @@ ul { list-style: none; }
 [data-theme="dark"] .cert-ico.mk { color: #facc15; }
 [data-theme="dark"] .cert-ico.ai { color: var(--accent); }
 
+/* Logo variant — always white bg so brand colors read correctly */
+.cert-ico.has-logo {
+  background: #ffffff !important;
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+.cert-logo-img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+  border-radius: 4px;
+}
+
 .cert-info { flex: 1; }
 .cert-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); }
 .cert-info p  { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }

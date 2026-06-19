@@ -265,19 +265,45 @@ function renderExperience(exp, edu) {
     `<div class="timeline">${expItems}${eduItems}</div>`;
 }
 
+function getCertLogo(name, issuer) {
+  const text = (name + ' ' + issuer).toLowerCase();
+  if (text.includes('google'))                        return 'https://logo.clearbit.com/google.com';
+  if (text.includes('mckinsey'))                      return 'https://logo.clearbit.com/mckinsey.com';
+  if (text.includes('macquarie') || text.includes('coursera')) return 'https://logo.clearbit.com/coursera.org';
+  if (text.includes('superhuman'))                    return 'https://logo.clearbit.com/superhuman.com';
+  return null;
+}
+
 function renderCertifications(certs) {
-  const badge = (type) => ({ g:'G', xl:'XL', mk:'M', ai:'AI', pbi:'PBI', py:'Py' }[type] || type.toUpperCase());
+  const badgeText = (type) => ({ g:'G', xl:'XL', mk:'M', ai:'AI', pbi:'PBI', py:'Py' }[type] || type.toUpperCase());
 
   document.getElementById('certs-render').innerHTML = `
     <div class="cert-grid">
-      ${certs.map(c => `
-        <div class="cert-card reveal">
-          <div class="cert-ico ${c.type}">${badge(c.type)}</div>
-          <div class="cert-info"><h4>${c.name}</h4><p>${c.issuer}</p></div>
-          <div class="cert-tick">✓</div>
-        </div>
-      `).join('')}
+      ${certs.map(c => {
+        const logo = getCertLogo(c.name, c.issuer);
+        return `
+          <div class="cert-card reveal">
+            <div class="cert-ico ${logo ? 'has-logo' : c.type}">
+              ${logo
+                ? `<img src="${logo}" alt="${c.issuer}" class="cert-logo-img" data-fallback="${badgeText(c.type)}" data-type="${c.type}" />`
+                : badgeText(c.type)
+              }
+            </div>
+            <div class="cert-info"><h4>${c.name}</h4><p>${c.issuer}</p></div>
+            <div class="cert-tick">✓</div>
+          </div>`;
+      }).join('')}
     </div>`;
+
+  // Graceful fallback if a logo fails to load
+  document.querySelectorAll('.cert-logo-img').forEach(img => {
+    img.addEventListener('error', () => {
+      const wrap = img.parentElement;
+      wrap.classList.remove('has-logo');
+      wrap.classList.add(img.dataset.type);
+      wrap.textContent = img.dataset.fallback;
+    });
+  });
 }
 
 function renderContact(c) {
