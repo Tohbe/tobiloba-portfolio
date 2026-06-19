@@ -40,8 +40,10 @@ function renderAll(d) {
   renderContact(d.contact);
   renderFooter(d.hero);
 
-  const hire = document.getElementById('nav-hire');
-  if (hire) hire.href = 'mailto:' + d.contact.email;
+  ['nav-hire', 'nav-hire-mobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = 'mailto:' + d.contact.email;
+  });
 
   requestAnimationFrame(() => {
     initTypewriter(d.hero.roles);
@@ -62,16 +64,30 @@ function renderHero(h) {
   const first = nameParts[0];
   const rest  = nameParts.slice(1).join(' ');
 
-  const photoBlock = h.photo
-    ? `<div class="hero-photo-wrap"><img src="${h.photo}" alt="${h.name}" /></div>`
-    : '';
+  const monogram = `
+    <div class="hero-monogram" aria-hidden="true">
+      <svg class="hm-svg" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hmG1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00d4ff"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r="66" stroke="url(#hmG1)" stroke-width="1.5" stroke-dasharray="5 5" class="hm-ring-1"/>
+        <circle cx="70" cy="70" r="52" stroke="rgba(99,102,241,0.25)" stroke-width="1" stroke-dasharray="2 8" class="hm-ring-2"/>
+        <circle cx="70" cy="4"  r="5" fill="#00d4ff" class="hm-dot-a"/>
+        <circle cx="136" cy="70" r="3.5" fill="#6366f1" class="hm-dot-b"/>
+        <circle cx="70" cy="136" r="3" fill="#00d4ff" opacity="0.7" class="hm-dot-c"/>
+      </svg>
+      <div class="hm-core">TA</div>
+    </div>`;
 
   document.getElementById('hero-render').innerHTML = `
     <div class="hero-badge">
       <span class="pulse-dot"></span>
       ${h.available ? 'Available for opportunities' : 'Open to select projects'}
     </div>
-    ${photoBlock}
+    ${monogram}
     <h1 class="hero-name">
       <span>${first}</span>
       <span class="grad-text">${rest}</span>

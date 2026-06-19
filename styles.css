@@ -227,16 +227,25 @@ ul { list-style: none; }
   100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
 }
 
-/* Hero photo */
-.hero-photo-wrap {
-  width: 100px; height: 100px; border-radius: 50%;
-  margin: 0 auto 24px;
-  border: 3px solid transparent;
-  background: linear-gradient(var(--bg), var(--bg)) padding-box,
-              linear-gradient(135deg, var(--accent), var(--accent2)) border-box;
-  overflow: hidden;
+/* Hero monogram */
+.hero-monogram {
+  width: 140px; height: 140px;
+  position: relative; margin: 0 auto 24px;
 }
-.hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.hm-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  overflow: visible;
+}
+.hm-ring-1 { animation: hmSpin 12s linear infinite; transform-origin: 70px 70px; }
+.hm-ring-2 { animation: hmSpin 20s linear infinite reverse; transform-origin: 70px 70px; }
+@keyframes hmSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.hm-core {
+  position: absolute; inset: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--heading); font-size: 1.7rem; font-weight: 800; color: #fff;
+  box-shadow: 0 0 40px rgba(0,212,255,0.35), 0 0 80px rgba(99,102,241,0.2);
+}
 
 .hero-name {
   font-family: var(--heading);
@@ -749,6 +758,13 @@ body.nav-open .nav-links {
   backdrop-filter: blur(20px);
 }
 
+/* Hire Me in mobile nav — hidden on desktop */
+.nav-hire-mobile { display: none; }
+body.nav-open .nav-hire-mobile { display: block; }
+body.nav-open .nav-hire-mobile .btn-hire {
+  display: inline-flex; padding: 10px 28px;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .about-grid      { grid-template-columns: 1fr; }
@@ -762,7 +778,7 @@ body.nav-open .nav-links {
 @media (max-width: 700px) {
   .nav-links  { display: none; }
   .hamburger  { display: flex; }
-  .btn-hire   { display: none; }
+  .nav-actions .btn-hire { display: none; }
   .hero       { padding: 110px 20px 60px; }
   .hero-btns  { flex-direction: column; align-items: center; }
   .hero-stats { gap: 20px; }
